@@ -31,7 +31,7 @@ initial_theta = zeros(n + 1, 1);
 m = size(X, 1); 
 p = round(sigmoid(X * betas));
 
-error = 1/m*(sum((y-p).^2));
+error = 1/m*(sum(abs(y-p)));
 
 fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
 fprintf('Error de entrenamiento: %f\n', error * 100);
